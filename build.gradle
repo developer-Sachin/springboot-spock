@@ -1,0 +1,33 @@
+buildscript {
+    ext{
+      springbootVersion = '2.1.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies{
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springbootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'jacoco'
+apply plugin: 'groovy'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testCompile('org.spockframework:spock-core:1.1-groovy-2.4')
+    testCompile('org.spockframework:spock-spring:1.1-groovy-2.4')
+}
+

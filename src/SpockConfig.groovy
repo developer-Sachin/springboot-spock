@@ -1,0 +1,6 @@
+runner {
+   exclude {
+       annotation  slow
+   }
+}
+
